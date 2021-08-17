@@ -60,9 +60,10 @@ namespace Luna_Project_Example.Controllers
             if (ModelState.IsValid)
             {
                 Meter meter = db.Meters.Find(subscriber.meter_meterID);
-                if (meter.numberOfSubs < meter.maxNumberOfSubs)
+                if (meter == null || meter.numberOfSubs < meter.maxNumberOfSubs)
                 {
-                    meter.numberOfSubs++;
+                    if(meter != null)
+                        meter.numberOfSubs++;
                     db.Subscribers.Add(subscriber);
                     db.SaveChanges();
                     return RedirectToAction("Index");
