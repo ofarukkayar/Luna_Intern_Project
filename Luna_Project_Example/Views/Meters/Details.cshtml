@@ -1,0 +1,50 @@
+﻿@model Luna_Project_Example.Models.Meter
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Meter</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.valveWidth)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.valveWidth)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.numberOfSubs)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.numberOfSubs)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.productionDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.productionDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.batteryState)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.batteryState)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.meterID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

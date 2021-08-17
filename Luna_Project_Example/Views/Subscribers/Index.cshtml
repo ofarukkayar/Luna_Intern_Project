@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Luna_Project_Example.Models.Subscriber>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.surname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.meter_meterID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.subID)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.surname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.meter_meterID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.subID)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.subID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.subID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.subID })
+            </td>
+        </tr>
+    }
+
+</table>

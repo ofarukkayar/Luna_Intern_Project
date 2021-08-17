@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Luna_Project_Example.Models.Subscriber>
+@{
+    ViewBag.Title = "Associate";
+}
+@using (Html.BeginForm())
+{
+    <h2>Associate</h2>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.surname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.meter_meterID)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.surname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.meter_meterID)
+                </td>
+                <td>
+                    @Html.ActionLink("Unsubscribe", "Unsubscribe", new { id = item.subID })
+                </td>
+            </tr>
+        }
+
+    </table>
+}
