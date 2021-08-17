@@ -1,33 +1,35 @@
 ﻿@model IEnumerable<Luna_Project_Example.Models.Meter>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Luna Project - List of Registered Meters";
 }
 
-<h2>Index</h2>
+<h2>List of Registered Meters</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Add New", "Create", null, new { @class = "createButton" })
+
+    <link rel="stylesheet" href="~/Buttons.css">
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.meterID)
+            @Html.DisplayName("Meter ID")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.valveWidth)
+            @Html.DisplayName("Valve Width")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.numberOfSubs)
+            @Html.DisplayName("Number of Subscriber")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.maxNumberOfSubs)
+            @Html.DisplayName("Maximum Number of Subscribers Allowed")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.productionDate)
+            @Html.DisplayName("Production Time")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.batteryState)
+            @Html.DisplayName("Battery State")
         </th>
         <th></th>
     </tr>
@@ -53,10 +55,10 @@
         @Html.DisplayFor(modelItem => item.batteryState)
     </td>
     <td>
-        @Html.ActionLink("Edit", "Edit", new { id = item.meterID }) |
-        @Html.ActionLink("Details", "Details", new { id = item.meterID }) |
-        @Html.ActionLink("Delete", "Delete", new { id = item.meterID }) |
-        @Html.ActionLink("Associate", "Associate", new { id = item.meterID })
+        @Html.ActionLink("Edit", "Edit", new { id = item.meterID }, new { @class = "editButton" })
+        @Html.ActionLink("Details", "Details", new { id = item.meterID }, new { @class = "detailsButton" })
+        @Html.ActionLink("Delete", "Delete", new { id = item.meterID }, new { @class = "deleteButton" })
+        @Html.ActionLink("Associate", "Associate", new { id = item.meterID }, new { @class = "associateButton" })
     </td>
 </tr>
 }

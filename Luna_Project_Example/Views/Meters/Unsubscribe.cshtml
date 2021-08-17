@@ -2,6 +2,7 @@
 
 <h3>Are you sure you want to unsubscribe?</h3>
 <div>
+    <link rel="stylesheet" href="~/Buttons.css">
     <h4>Subscriber</h4>
     <hr />
     <dl class="dl-horizontal">
@@ -31,12 +32,13 @@
 
     </dl>
 
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm())
+    {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Unsubscribe" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Associate")
+            <input type="submit" value="Unsubscribe" class="deleteButton" /> |
+            @Html.ActionLink("Back to List", "Associate", null, new { @class = "backButton" })
         </div>
     }
 </div>

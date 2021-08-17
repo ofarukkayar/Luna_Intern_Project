@@ -5,16 +5,17 @@
 @using (Html.BeginForm())
 {
     <h2>Associate</h2>
+    <link rel="stylesheet" href="~/Buttons.css">
     <table class="table">
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.name)
+                @Html.DisplayName("Name")
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.surname)
+                @Html.DisplayName("Surname")
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.meter_meterID)
+                @Html.DisplayName("Subscribed Meter ID")
             </th>
             <th></th>
         </tr>
@@ -32,10 +33,12 @@
                     @Html.DisplayFor(modelItem => item.meter_meterID)
                 </td>
                 <td>
-                    @Html.ActionLink("Unsubscribe", "Unsubscribe", new { id = item.subID })
+                    @Html.ActionLink("Unsubscribe", "Unsubscribe", new { id = item.subID }, new { @class = "deleteButton" })
+
                 </td>
             </tr>
         }
 
     </table>
+    @Html.ActionLink("Back to List", "Index", null, new { @class = "backButton" })
 }

@@ -7,6 +7,7 @@
 <h2>Details</h2>
 
 <div>
+    <link rel="stylesheet" href="~/Buttons.css">
     <h4>Meter</h4>
     <hr />
     <dl class="dl-horizontal">
@@ -45,6 +46,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.meterID }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Edit", "Edit", new { id = Model.meterID }, new { @class = "bottomEditButton" })
+    @Html.ActionLink("Back to List", "Index", null, new { @class = "backButton" })
 </p>

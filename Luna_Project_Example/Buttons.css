@@ -1,0 +1,72 @@
+﻿body {
+}
+
+a.editButton {
+    background-color: #0094ff;
+    border-radius: 5px;
+    color: #ffffff;
+    display: block;
+    display: inline-block;
+    padding: 3px;
+}
+a.detailsButton {
+    background-color: #35b200;
+    border-radius: 5px;
+    color: #ffffff;
+    display: block;
+    display: inline-block;
+    padding: 3px;
+}
+a.deleteButton {
+    background-color: #ff0000;
+    border-radius: 5px;
+    color: #ffffff;
+    display: block;
+    display: inline-block;
+    padding: 3px;
+}
+a.associateButton {
+    background-color: darkorange;
+    border-radius: 5px;
+    color: #ffffff;
+    display: block;
+    display: inline-block;
+    padding: 3px;
+}
+
+a.bottomEditButton {
+    background-color: #0094ff;
+    border-radius: 5px;
+    color: #000000;
+    display: block;
+    display: inline-block;
+    border: groove;
+    padding: 3px;
+}
+a.createButton {
+    background-color: #c7c7c7;
+    border-radius: 5px;
+    color: #000000;
+    display: block;
+    display: inline-block;
+    border: solid;
+    padding: 4px;
+}
+a.saveButton {
+    background-color: #8eff5e;
+    border-radius: 5px;
+    color: #000000;
+    display: block;
+    display: inline-block;
+    border: groove;
+    padding: 3px;
+}
+a.backButton {
+    background-color: #dbdbdb;
+    border-radius: 5px;
+    color: #000000;
+    display: block;
+    display: inline-block;
+    border: groove;
+    padding: 3px;
+}
