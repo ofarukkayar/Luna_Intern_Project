@@ -6,39 +6,41 @@
 {
     <h2>Associate</h2>
     <link rel="stylesheet" href="~/Buttons.css">
-    <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayName("Name")
-            </th>
-            <th>
-                @Html.DisplayName("Surname")
-            </th>
-            <th>
-                @Html.DisplayName("Subscribed Meter ID")
-            </th>
-            <th></th>
-        </tr>
-
-        @foreach (var item in Model)
-        {
+    <div class="w3-responsive">
+        <table class="table">
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.surname)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.meter_meterID)
-                </td>
-                <td>
-                    @Html.ActionLink("Unsubscribe", "Unsubscribe", new { id = item.subID }, new { @class = "deleteButton" })
-
-                </td>
+                <th>
+                    @Html.DisplayName("Name")
+                </th>
+                <th>
+                    @Html.DisplayName("Surname")
+                </th>
+                <th>
+                    @Html.DisplayName("Subscribed Meter ID")
+                </th>
+                <th></th>
             </tr>
-        }
 
-    </table>
-    @Html.ActionLink("Back to List", "Index", null, new { @class = "backButton" })
-}
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.surname)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.meter_meterID)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Unsubscribe", "Unsubscribe", new { id = item.subID }, new { @class = "deleteButton" })
+
+                    </td>
+                </tr>
+            }
+
+        </table>
+     </div>
+        @Html.ActionLink("Back to List", "Index", null, new { @class = "backButton" })
+        }

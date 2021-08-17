@@ -10,45 +10,48 @@
     @Html.ActionLink("Add New", "Create", null, new { @class = "createButton" })
 
     <link rel="stylesheet" href="~/Buttons.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayName("Subscriber ID")
-        </th>
-        <th>
-            @Html.DisplayName("Name")
-        </th>
-        <th>
-            @Html.DisplayName("Surname")
-        </th>
-        <th>
-            @Html.DisplayName("Subscribed Meter ID")
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
+<div class="w3-responsive">
+    <table class="table">
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.subID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.surname)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.meter_meterID)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.subID }, new { @class = "editButton" })
-                @Html.ActionLink("Details", "Details", new { id = item.subID }, new { @class = "detailsButton" })
-                @Html.ActionLink("Delete", "Delete", new { id = item.subID }, new { @class = "deleteButton" })
-            </td>
+            <th>
+                @Html.DisplayName("Subscriber ID")
+            </th>
+            <th>
+                @Html.DisplayName("Name")
+            </th>
+            <th>
+                @Html.DisplayName("Surname")
+            </th>
+            <th>
+                @Html.DisplayName("Subscribed Meter ID")
+            </th>
+            <th></th>
         </tr>
-    }
 
-</table>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.subID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.surname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.meter_meterID)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.subID }, new { @class = "editButton" })
+                    @Html.ActionLink("Details", "Details", new { id = item.subID }, new { @class = "detailsButton" })
+                    @Html.ActionLink("Delete", "Delete", new { id = item.subID }, new { @class = "deleteButton" })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

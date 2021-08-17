@@ -10,57 +10,61 @@
     @Html.ActionLink("Add New", "Create", null, new { @class = "createButton" })
 
     <link rel="stylesheet" href="~/Buttons.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayName("Meter ID")
-        </th>
-        <th>
-            @Html.DisplayName("Valve Width")
-        </th>
-        <th>
-            @Html.DisplayName("Number of Subscriber")
-        </th>
-        <th>
-            @Html.DisplayName("Maximum Number of Subscribers Allowed")
-        </th>
-        <th>
-            @Html.DisplayName("Production Time")
-        </th>
-        <th>
-            @Html.DisplayName("Battery State")
-        </th>
-        <th></th>
-    </tr>
+<div class="w3-responsive">
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayName("Meter ID")
+            </th>
+            <th>
+                @Html.DisplayName("Valve Width")
+            </th>
+            <th>
+                @Html.DisplayName("Number of Subscriber")
+            </th>
+            <th>
+                @Html.DisplayName("Maximum Number of Subscribers Allowed")
+            </th>
+            <th>
+                @Html.DisplayName("Production Time")
+            </th>
+            <th>
+                @Html.DisplayName("Battery State")
+            </th>
+            <th></th>
+        </tr>
 
-@foreach (var item in Model) {
-<tr>
-    <td>
-        @Html.DisplayFor(modelItem => item.meterID)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.valveWidth)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.numberOfSubs)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.maxNumberOfSubs)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.productionDate)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.batteryState)
-    </td>
-    <td>
-        @Html.ActionLink("Edit", "Edit", new { id = item.meterID }, new { @class = "editButton" })
-        @Html.ActionLink("Details", "Details", new { id = item.meterID }, new { @class = "detailsButton" })
-        @Html.ActionLink("Delete", "Delete", new { id = item.meterID }, new { @class = "deleteButton" })
-        @Html.ActionLink("Associate", "Associate", new { id = item.meterID }, new { @class = "associateButton" })
-    </td>
-</tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.meterID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.valveWidth)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.numberOfSubs)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.maxNumberOfSubs)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.productionDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.batteryState)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.meterID }, new { @class = "editButton" })
+                    @Html.ActionLink("Details", "Details", new { id = item.meterID }, new { @class = "detailsButton" })
+                    @Html.ActionLink("Delete", "Delete", new { id = item.meterID }, new { @class = "deleteButton" })
+                    @Html.ActionLink("Associate", "Associate", new { id = item.meterID }, new { @class = "associateButton" })
+                </td>
+            </tr>
+        }
 
-</table>
+    </table>
+</div>
