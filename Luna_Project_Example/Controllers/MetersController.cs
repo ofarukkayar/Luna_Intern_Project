@@ -133,11 +133,10 @@ namespace Luna_Project_Example.Controllers
         {
             if (ModelState.IsValid)
             {
-                Meter oldMeter = db.Meters.Find(meter.meterID);
+                Meter oldMeter = db.Meters.AsNoTracking().FirstOrDefault(i => i.meterID == meter.meterID);
                 if (oldMeter.numberOfSubs <= meter.maxNumberOfSubs)
                 {
-                    db.Meters.Remove(oldMeter);
-                    db.Meters.Add(meter);
+                    db.Entry(meter).State = EntityState.Modified;
                     db.SaveChanges();
                 }
                 else

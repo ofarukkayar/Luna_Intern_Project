@@ -116,7 +116,7 @@ namespace Luna_Project_Example.Controllers
 
                 if (meter.numberOfSubs < meter.maxNumberOfSubs)
                 {
-                    Subscriber unedittedSub = db.Subscribers.Find(subscriber.subID);
+                    Subscriber unedittedSub = db.Subscribers.AsNoTracking().FirstOrDefault(i => i.subID == subscriber.subID);
                     if(unedittedSub.meter_meterID != meter.meterID)
                     {
                         meter.numberOfSubs++;
@@ -124,8 +124,8 @@ namespace Luna_Project_Example.Controllers
                         if(oldMeter != null)
                             oldMeter.numberOfSubs--;
                     }
-                    db.Subscribers.Remove(unedittedSub);
-                    db.Subscribers.Add(subscriber);
+                    db.Entry(meter).State = EntityState.Modified;
+                    db.Entry(subscriber).State = EntityState.Modified;
                     db.SaveChanges();
                     return RedirectToAction("Index");
                 }
